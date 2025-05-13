@@ -15,15 +15,15 @@ pipeline {
 
         stage('Lint') {
             steps {
-                sh 'pip install pylint'
-                sh 'pylint --disable=C0111,C0103,C0303,C0330 app.py || true'
+                bat 'pip install pylint'
+                bat 'pylint --disable=C0111,C0103,C0303,C0330 app.py || true'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'pip install pytest flask'
-                sh 'pytest'
+                bat 'pip install pytest flask'
+                bat 'pytest'
             }
         }
 
